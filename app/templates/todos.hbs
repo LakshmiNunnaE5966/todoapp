@@ -7,7 +7,7 @@
     <div class="container">
         <div class="content">
             {{input type="text" value=description placeholder="Enter your activity here to make note.."}}
-            <button class="btn" > Add </button>
+            <button class="btn" {{action 'addTodo'}}> Add </button>
         </div>
         <div class="options">
             <button class="btn" > All </button>
@@ -18,9 +18,9 @@
         {{#each model as |todo|}}
         <article class="listing">
             <div class="desc">
-                 <input class ="check"type="checkbox"/>
+                 <input class ="check" type="checkbox"/>
                 <h1>{{todo.title}}</h1>
-                <button class="btns" {{action "removetodo"}}>delete</button>
+                <button class="btns">delete</button>
             </div>
         </article>
         {{/each}}
