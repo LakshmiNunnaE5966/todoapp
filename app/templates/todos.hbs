@@ -1,29 +1,35 @@
 
 <div class="main">
-    <div class="title">
-        <h1>TODO List</h1>
-    </div>
+    
     <br>
     <div class="container">
         <div class="content">
-            {{input type="text" value=description placeholder="Enter your activity here to make note.."}}
+            {{input type="text" value=description placeholder="What need to be done?"}}
             <button class="btn" {{action 'addTodo'}}> Add </button>
         </div>
-        <div class="options">
-            <button class="btn" > All </button>
-            <button class="btn"> Completed </button>
-            <button class="btn"> Not Completed </button>
-        </div>
-        
+        <br><br>
+        <div class="listing">
+
+            <h1>Todo List</h1><hr>
+            <table class="tble">
         {{#each model as |todo|}}
-        <article class="listing">
-            <div class="desc">
-                 <input class ="check" type="checkbox"/>
-                <h1>{{todo.title}}</h1>
-                <button class="btns">delete</button>
+        <article class="list">
+            <div class="desc"><tr>
+                 <td><input class ="check" type="checkbox"/></td>
+                <td><h1>{{todo.title}}</h1></td>
+               {{!-- <td> {{fa-icon "coffee"}}</td> --}}
+            </tr>
             </div>
         </article>
+        <hr style="width:95%">
         {{/each}}
+        </table>
+        </div>
+        <div class="options">
+            <button class="bt" > AllTodos</button>
+            <button class="bt"> Pending </button>
+            <button class="bt"{{action "completedTodos" on="click"}}> Completed </button>
+        </div>
     </div>
 
 </div>

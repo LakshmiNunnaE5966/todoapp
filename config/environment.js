@@ -2,6 +2,10 @@
 
 module.exports = function(environment) {
   var ENV = {
+    // fontawesome: {
+    //   defaultPrefix: 'fal' // light icons
+    // },
+
     modulePrefix: 'todoapp',
     environment: environment,
     rootURL: '/',

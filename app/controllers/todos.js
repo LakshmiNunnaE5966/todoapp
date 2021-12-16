@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import todo from '../models/todo';
 
 export default Ember.Controller.extend({
     actions : {
@@ -12,6 +13,13 @@ export default Ember.Controller.extend({
             });
             task.save();
           }
+          this.set('title',"");
+        },
+        removeTodo(){
+          todo.deleteRecord();
+          todo.save();
+
         }
+        
       }
 });
