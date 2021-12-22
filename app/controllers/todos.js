@@ -11,15 +11,9 @@ export default Ember.Controller.extend({
               completed:false
               
             });
+            this.set('description', '');
             task.save();
           }
-          this.set('title',"");
-        },
-        removeTodo(){
-          todo.deleteRecord();
-          todo.save();
-
         }
-        
       }
 });

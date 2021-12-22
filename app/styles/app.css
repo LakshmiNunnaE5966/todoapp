@@ -3,7 +3,17 @@
     margin-right: 10%;
     font-size: medium;
 }
-
+.icon{
+    margin-left: 10px;
+    position: absolute;
+    margin-top: 19px;
+}
+i{
+    cursor: pointer;
+}
+.inpt{
+    padding-left: 30px;
+}
 button{
     /* background-color: rgb(39, 42, 230); */
     color: rgb(170, 166, 166);
@@ -66,6 +76,9 @@ input{
     /* padding: 0%; */
     width: 25px;
     cursor: pointer;
+}
+td{
+    text-align: left;
 }
 .desc{
     /* padding: 5px; */
