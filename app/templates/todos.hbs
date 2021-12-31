@@ -16,17 +16,18 @@
                 </thead>
                 <hr>
                 <tbody>
-                    {{#each filteredTodos as |todo|}}
+                    {{#each model as |todo|}}
                     {{#each-todo title=todo.title}}
                     {{/each-todo}}
-                    <hr style="width:95%">
                     {{/each}}
                 </tbody>
                 <tfoot></tfoot>
             </table>
         </div>
 
-        
+        <div class="options">
+            {{#link-to "todos" (query-params completed = true)}}Completed{{/link-to}}
+        </div>
 
     </div>
 
