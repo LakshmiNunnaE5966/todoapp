@@ -1,0 +1,11 @@
+<tr>
+    <td width="40px">{{input class="check" type="checkbox" checked=todo.completed}}</td>
+    <td width="30px">{{fa-icon "minus"}}</td>
+    <td width="1150px">
+        <h2>{{title}}</h2>
+    </td>
+    <td width="0%">
+        <div {{action "remove" todo.id}}>{{fa-icon "trash"}}</div>
+    </td>
+
+</tr>

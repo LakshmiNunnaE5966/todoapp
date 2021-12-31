@@ -4,33 +4,32 @@
         <div class="content">
             <i class="icon">{{fa-icon "edit"}}</i>
             {{input class="inpt" type="text"value=description placeholder="What need to be done?"}}
-
             <button class="btn" {{action 'addTodo' }}> Add </button>
         </div>
         <br><br>
         <div class="listing">
             <table class="tble">
                 <thead>
-                    <h1>Todo List</h1>
+                    <tr>
+                        <th>Todo List</th>
+                    </tr>
                 </thead>
                 <hr>
-                {{#each model as |todo|}}
-                <tr>
-                    <td width="40px"><input class="check" type="checkbox" /></td>
-                    <td width="30px"><i>{{fa-icon "minus"}}</i></td>
-                    <td width="1150px"><h2>{{todo.title}}</h2></td>
-                    <td width="0%"><i>{{fa-icon "trash"}}</i></td>
-                </tr>
-                <hr style="width:95%">
-                {{/each}}
+                <tbody>
+                    {{#each filteredTodos as |todo|}}
+                    {{#each-todo title=todo.title}}
+                    {{/each-todo}}
+                    <hr style="width:95%">
+                    {{/each}}
+                </tbody>
+                <tfoot></tfoot>
             </table>
         </div>
-        <div class="options">
-            <button class="bt"> AllTodos</button>
-            <button class="bt"> Pending </button>
-            <button class="bt"> Completed </button>
-        </div>
+
+        
+
     </div>
 
 </div>
+
 {{outlet}}
