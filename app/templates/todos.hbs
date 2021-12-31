@@ -16,8 +16,8 @@
                 </thead>
                 <hr>
                 <tbody>
-                    {{#each model as |todo|}}
-                    {{#each-todo title=todo.title}}
+                    {{#each filteredTodos as |todo|}}
+                    {{#each-todo title=todo.title checked=todo.completed}}
                     {{/each-todo}}
                     {{/each}}
                 </tbody>
@@ -26,7 +26,10 @@
         </div>
 
         <div class="options">
-            {{#link-to "todos" (query-params completed = true)}}Completed{{/link-to}}
+            <div>{{#link-to "todos" (query-params )}}AllTodos{{/link-to}}</div>
+            <div>{{#link-to "todos" (query-params completed = true)}}Completed{{/link-to}}</div>
+            <div>{{#link-to "todos" (query-params completed = false)}}Pending{{/link-to}}</div>
+
         </div>
 
     </div>

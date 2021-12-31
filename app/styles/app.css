@@ -60,19 +60,29 @@ input{
     background-color: rgb(224, 223, 221);
     /* height: 50px; */
 }
-.bt:hover{
-    background-color: rgb(39, 42, 230);
+
+.options{
+    display: flex;
+    text-align: center;
 }
-.bt{
-    width:250px;
+.options > div {
+    width: 250px;
     height: 50px;
-    background-color: rgb(224, 223, 221);
-    border: none !important;
+    margin: 10px;
+    color: darkgrey;
+    text-align: center;
+    font-size: 25px;  
+}
+.options :hover{
+    background-color: rgb(39, 42, 230);
 
 }
-.options{
-    padding: 50px;
+
+tr{
     display: flex;
+}
+tr >td{
+padding:10px;
 }
 .check{
     /* padding: 0%; */
