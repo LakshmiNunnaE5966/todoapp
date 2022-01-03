@@ -1,37 +1,35 @@
-<div class="main">
-    <br>
-    <div class="container">
-        <div class="content">
-            <i class="icon">{{fa-icon "edit"}}</i>
-            {{input class="inpt" type="text"value=description placeholder="What need to be done?"}}
-            <button class="btn" {{action 'addTodo' }}> Add </button>
+<div class="container">
+    <div class="content">
+        <i class="icon">{{fa-icon "edit" size=2 tagName="span"}}</i>
+        {{input class="inpt" type="text"value=description placeholder="  What need to be done?"}}
+        <div class="add">
+            <i>{{fa-icon "plus-circle" size=2}}</i>
+            <button class="btn" {{action 'addTodo'}}> Add </button>
         </div>
-        <br><br>
-        <div class="listing">
-            <table class="tble">
-                <thead>
-                    <tr>
-                        <th>Todo List</th>
-                    </tr>
-                </thead>
-                <hr>
-                <tbody>
-                    {{#each filteredTodos as |todo|}}
-                    {{#each-todo title=todo.title checked=todo.completed}}
-                    {{/each-todo}}
-                    {{/each}}
-                </tbody>
-                <tfoot></tfoot>
-            </table>
-        </div>
+    </div>
 
-        <div class="options">
-            <div>{{#link-to "todos" (query-params )}}AllTodos{{/link-to}}</div>
-            <div>{{#link-to "todos" (query-params completed = true)}}Completed{{/link-to}}</div>
-            <div>{{#link-to "todos" (query-params completed = false)}}Pending{{/link-to}}</div>
+    <div class="listing">
+        <table class="tble">
+            <thead>
+                <tr>
+                    <th>Todo List</th>
+                </tr>
+            </thead>
+            <hr>
+            <tbody>
+                {{#each filteredTodos as |todo|}}
+                {{#each-todo title=todo.title checked=todo.completed}}
+                {{/each-todo}}
+                {{/each}}
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
 
-        </div>
-
+    <div class="options">
+        <div>{{#link-to "todos" (query-params )}}AllTodos{{/link-to}}</div>
+        <div>{{#link-to "todos" (query-params completed = true)}}Completed{{/link-to}}</div>
+        <div>{{#link-to "todos" (query-params completed = false)}}Pending{{/link-to}}</div>
     </div>
 
 </div>
