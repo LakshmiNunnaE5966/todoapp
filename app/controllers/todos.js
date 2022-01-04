@@ -17,7 +17,6 @@ export default Ember.Controller.extend({
     }
   }),
 
-
   actions: {
     addTodo() {
       if (this.get('description')) {

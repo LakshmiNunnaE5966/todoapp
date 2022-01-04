@@ -1,7 +1,7 @@
 <div class="container">
     <div class="addingtodo">
         <div class="icon">{{fa-icon "edit" size=2 tagName="span"}}</div>
-        {{input class="inpt" type="text"value=description placeholder=" What need to be done?"}}
+        {{input class="inpt" type="text"value=description placeholder="What need to be done?"}}
         <div class="add">
             <i>{{fa-icon "plus-circle" size=2}}</i>
             <button class="btn" {{action 'addTodo' }}> Add </button>
@@ -14,14 +14,14 @@
     <div class="listing">
         <ul>
             {{#each filteredTodos as |todo|}}
-            {{#each-todo title=todo.title checked=todo.completed}}
+            {{#each-todo title=todo.title checked=todo.completed todo=todo}}
             {{/each-todo}}
             {{/each}}
         </ul>
     </div>
 
     <div class="options">
-        <button class="bt-opt">{{#link-to "todos" (query-params )}}AllTodos{{/link-to}}</button>
+        <button class="bt-opt">{{#link-to "todos" (query-params completed = null)}}AllTodos{{/link-to}}</button>
         <button class="bt-opt">{{#link-to "todos" (query-params completed = true)}}Completed{{/link-to}}</button>
         <button class="bt-opt">{{#link-to "todos" (query-params completed = false)}}Pending{{/link-to}}</button>
     </div>
