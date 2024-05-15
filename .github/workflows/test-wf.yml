@@ -1,0 +1,23 @@
+name: Test workflow
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  src-branch-bundle-size:
+    runs-on: ["self-hosted", "Linux", "fw-shared"]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: print text
+        run: echo "hola!!! lets have fun"
